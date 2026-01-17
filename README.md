@@ -1,13 +1,16 @@
-# Centralized Log Aggregation System
+### Centralized Log Aggregation System
 
-A distributed logging system built using Spring Boot, Kafka, and Elasticsearch to collect, process, and analyze logs from multiple microservices in real time.
+A distributed logging system built using 
+Spring Boot, Kafka, and 
+Elasticsearch to collect, process, and analyze logs 
+from multiple microservices.
 
-## Architecture
+#### Architecture
 - User Service → Kafka
 - Order Service → Kafka
 - Kafka → Log Processor Service → Elasticsearch
 
-## Tech Stack
+#### Tech Stack
 - Java 17
 - Spring Boot
 - Apache Kafka (KRaft mode)
@@ -15,19 +18,22 @@ A distributed logging system built using Spring Boot, Kafka, and Elasticsearch t
 - Docker
 - REST APIs
 
-## Features
+#### Features
 - Centralized log collection from multiple microservices
 - Asynchronous, high-throughput log ingestion using Kafka
 - Trace-id based distributed request tracking
 - Real-time log indexing into Elasticsearch
 - Decoupled and scalable architecture
 
-## Services
-- **User Service** – Generates user-related endpoint logs
-- **Order Service** – Generates order-related endpoint logs
-- **Log Processor Service** – Consumes Kafka logs and stores them in Elasticsearch
+#### Services
+- **User Service** –
+- Generates user-related endpoint logs
+- **Order Service** –
+-  Generates order-related endpoint logs
+- **Log Processor Service** –
+- Consumes Kafka logs and stores them in Elasticsearch
 
-## Setup Instructions
+#### Setup Instructions
 (steps below 👇)
 -----
 
@@ -54,11 +60,12 @@ bin/kafka-storage.sh format \
 Run docker instance for elasticsearch:
 =============
 docker rm -f elasticsearch                              
-docker run -d --name elasticsearch -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" -e "xpack.security.enabled=false" docker.elastic.co/elasticsearch/elasticsearch:9.2.2
+docker run -d --name elasticsearch -p 9200:9200 -p 9300:9300 
+-e "discovery.type=single-node" -e "xpack.security.enabled=false" docker.elastic.co/elasticsearch/elasticsearch:9.2.2
 
 
 
-## Future Enhancements
+#### Future Enhancements
 - Kibana dashboards and alerts
 - Dead-letter topic for failed logs
 - Log levels (INFO, WARN, ERROR)
