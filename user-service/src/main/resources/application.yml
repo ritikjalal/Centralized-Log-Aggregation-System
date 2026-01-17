@@ -1,0 +1,7 @@
+
+kafka.topic.user-topic: user-service-topic
+
+
+spring:
+  kafka:
+    bootstrap-servers: localhost:9092
